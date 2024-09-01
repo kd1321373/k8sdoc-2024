@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "alefragnani.bookmarks",
+        "ms-ceintl.vscode-language-pack-ja",
+        "ms-azuretools.vscode-docker",
+        "hediet.vscode-drawio",
+        "github.copilot",
+        "github.vscode-github-actions",
+        "eamodio.gitlens"
+    ]
+}
