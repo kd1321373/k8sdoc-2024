@@ -14,13 +14,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: install rye
-      run: |
-        curl -sSf https://rye.astral.sh/get | bash
-
+    - name: Install the latest version of rye
+      uses: eifinger/setup-rye@v4
+  
     - name: Install dependencies
-      run: sh -c "make init"
+      run: make init
 
     - name: Run build html
-      run: sh -c "make html"
+      run: make html
 
