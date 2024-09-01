@@ -36,12 +36,9 @@ jobs:
       run: make init
 
     - name: Run build html
-      run: |
-        make html
-        find build/html
+      run: make html
+  
 
-    - name: Checkout
-      uses: actions/checkout@v4
     - name: Setup Pages
       uses: actions/configure-pages@v5
     - name: Upload artifact
