@@ -18,9 +18,6 @@ Kubernetes(K8s)の操作には、`kubectl`というツールを使います。
 
 ```bash
 $ kubectl get nodes
-```
-
-```
 NAME             STATUS   ROLES           AGE     VERSION
 docker-desktop   Ready    control-plane   4m58s   v1.30.2
 ```

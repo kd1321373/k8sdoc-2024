@@ -7,3 +7,5 @@ Kubernetes環境の構築
 
    setup.md
    kubectl.md
+   reset.md
+

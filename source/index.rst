@@ -13,4 +13,5 @@ Kubernetes体験
    :caption: 目次:
 
    setup/index
+   whatis/index
 
