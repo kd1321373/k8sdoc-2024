@@ -36,7 +36,9 @@ jobs:
       run: make init
 
     - name: Run build html
-      run: make html
+      run: |
+        make html
+        find build/html
 
     - name: Checkout
       uses: actions/checkout@v4
