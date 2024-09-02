@@ -18,7 +18,8 @@
 				"MS-CEINTL.vscode-language-pack-ja",
 				"alefragnani.Bookmarks",
 				"github.vscode-github-actions",
-				"hediet.vscode-drawio"
+				"hediet.vscode-drawio",
+				"ms-kubernetes-tools.vscode-kubernetes-tools"
 			]
 		}
 	},
