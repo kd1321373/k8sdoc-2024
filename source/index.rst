@@ -7,6 +7,7 @@ Kubernetes体験
 ============================
 
 大雑把に2024年度後期『アプリケーション・サーバー構築II』内容になります。
+本来であれば、最初にKubernetes(K8s)の概論を説明するところですが、セットアップ作業は少し時間が必要なためそちらを進めつつ、K8sの概要を説明していきます。
 
 .. toctree::
    :maxdepth: 2
@@ -14,4 +15,5 @@ Kubernetes体験
 
    setup/index
    whatis/index
+   tour/index
 
