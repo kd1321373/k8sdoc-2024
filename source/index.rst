@@ -16,4 +16,5 @@ Kubernetes体験
    setup/index
    whatis/index
    tour/index
+   ui/index
 
