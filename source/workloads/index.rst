@@ -10,3 +10,4 @@
     manifesto.md
     check-and-remove.md
     pod.md
+    deployment-replicaset.md
