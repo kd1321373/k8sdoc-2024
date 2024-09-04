@@ -9,7 +9,7 @@
 project = 'Kubernetes体験'
 copyright = '2024, 佐藤 大輔 <densuke@st.kobedenshi.ac.jp>'
 author = '佐藤 大輔 <densuke@st.kobedenshi.ac.jp>'
-release = '2024-09-02'
+release = '2024-09-04'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
