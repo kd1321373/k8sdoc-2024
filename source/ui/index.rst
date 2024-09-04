@@ -9,3 +9,4 @@ K8sではGUIはオプションです、普通は使わないのですが、慣�
 
    headlamp.md
    dashboard.md
+
