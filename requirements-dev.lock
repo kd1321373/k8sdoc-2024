@@ -2,7 +2,7 @@
 # use `rye lock` or `rye sync` to update this lockfile
 #
 # last locked with the following flags:
-#   pre: false
+#   pre: true
 #   features: []
 #   all-features: false
 #   with-sources: false
@@ -28,6 +28,7 @@ colorama==0.4.6
 docutils==0.21.2
     # via myst-parser
     # via sphinx
+    # via sphinx-rtd-theme
 h11==0.14.0
     # via uvicorn
 idna==3.8
@@ -64,14 +65,19 @@ sphinx==8.0.2
     # via myst-parser
     # via sphinx-autobuild
     # via sphinx-copybutton
+    # via sphinx-rtd-theme
+    # via sphinxcontrib-jquery
 sphinx-autobuild==2024.4.16
 sphinx-copybutton==0.5.2
+sphinx-rtd-theme==3.0.0rc1
 sphinxcontrib-applehelp==2.0.0
     # via sphinx
 sphinxcontrib-devhelp==2.0.0
     # via sphinx
 sphinxcontrib-htmlhelp==2.1.0
     # via sphinx
+sphinxcontrib-jquery==4.1
+    # via sphinx-rtd-theme
 sphinxcontrib-jsmath==1.0.1
     # via sphinx
 sphinxcontrib-qthelp==2.0.0
