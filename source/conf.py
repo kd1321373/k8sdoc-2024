@@ -27,7 +27,11 @@ language = 'ja'
 # html_theme = 'bizstyle'
 html_theme = "sphinx_rtd_theme"
 html_static_path = ['_static']
+html_css_files = [
+    'css/custom_sphinx_rtd_theme.css',
+    'css/fix-layout-property.css',
 
+]
 extensions = ["sphinx_copybutton", 'myst_parser']
 
 copybutton_prompt_text = r"$ "

@@ -1,0 +1,20 @@
+/*
+ * 「Sphinx の sphinx_rtd_theme をカスタマイズする」
+ * https://kuttsun.blogspot.com/2016/11/sphinx-sphinxrtdtheme.html
+ */
+
+ .wy-nav-content {
+    max-width: 1600px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    border-bottom: 1px solid #ccc;
+}
+
+.wy-table-responsive table td, .wy-table-responsive table th {
+    white-space: normal;
+}
+
+colgroup {
+    display: none;
+}

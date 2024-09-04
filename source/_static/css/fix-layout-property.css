@@ -1,0 +1,15 @@
+/*
+ * py:property's stacking on a single line on larger screen widths.
+ * https://github.com/readthedocs/sphinx_rtd_theme/issues/1301
+ *
+ * > Problem
+ * > Multiple properties I defined in the docs are all stacking on a single line.
+ * > （ドキュメントで定義した複数のプロパティがすべて1行に重なっている）
+ *
+ * https://github.com/readthedocs/sphinx_rtd_theme/issues/1301#issuecomment-1219961515
+ * https://gist.github.com/nocarryr/846301fd5c9083e2243346d19e55b5a3#file-override-css
+ */
+
+ dl.py.property {
+    display: block !important;
+}
