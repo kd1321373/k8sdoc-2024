@@ -24,8 +24,29 @@
 		}
 	},
 	"features": {
-		"ghcr.io/schlich/devcontainer-features/rye:1": {},
-		"ghcr.io/devcontainers/features/github-cli:1": {}
+		"ghcr.io/schlich/devcontainer-features/rye:1": {
+			"uv": true
+		},
+		"ghcr.io/devcontainers/features/github-cli:1": {
+			"installDirectlyFromGitHubRelease": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {
+			"moby": true,
+			"azureDnsAutoDetection": true,
+			"installDockerBuildx": true,
+			"installDockerComposeSwitch": true,
+			"version": "latest",
+			"dockerDashComposeVersion": "latest"
+		},
+		"ghcr.io/mpriscella/features/kind:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+			"version": "latest",
+			"helm": "none",
+			"minikube": "latest"
+		}
 	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
