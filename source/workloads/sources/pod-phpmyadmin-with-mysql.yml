@@ -1,0 +1,42 @@
+# MySQLとPHPMyAdminを同時に起動するPod
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: db-with-ui
+  labels:
+    name: db-with-ui
+spec:
+  containers:
+  - name: mysql
+    image: mysql:8
+    resources:
+      limits:
+        memory: "512Mi"
+        cpu: "500m"
+    env:
+    - name: MYSQL_RANDOM_ROOT_PASSWORD
+      value: "1"
+    - name: MYSQL_DATABASE
+      value: sample
+    - name: MYSQL_USER
+      value: user
+    - name: MYSQL_PASSWORD
+      value: password
+
+  - name: phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    resources:
+      limits:
+        memory: "256Mi"
+        cpu: "250m"
+    env:
+    - name: PMA_HOST
+      value: db-with-ui
+    - name: PMA_USER
+      value: user
+    - name: PMA_PASSWORD
+      value: password
+    ports:
+    - containerPort: 80
+      name: http

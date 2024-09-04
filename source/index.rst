@@ -10,13 +10,13 @@ Kubernetes体験
 本来であれば、最初にKubernetes(K8s)の概論を説明するところですが、セットアップ作業は少し時間が必要なためそちらを進めつつ、K8sの概要を説明していきます。
 
 .. toctree::
-   :maxdepth: 2
-   :caption: 目次:
+   :maxdepth: 1
 
    setup/index
    whatis/index
    tour/index
    ui/index
+   workloads/index
 
 
 本ドキュメントの公開方法
