@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hostbot
+  labels:
+    name: hostbot
+spec:
+  containers:
+  - name: hostbot
+    # イメージ名は各自のDockerHubアカウントにあわせて調整すること!
+    image: yourname/hostbot:v1
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 80

@@ -1,0 +1,27 @@
+### yourname/hostbot:v1 というイメージを使ったPodを作成するデプロイメント
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hostbot
+  labels:
+    name: hostbot
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: hostbot
+  template:
+    metadata:
+      labels:
+        name: hostbot
+    spec:
+      containers:
+      - name: hostbot
+        # イメージ名は各自のDockerHubアカウントにあわせて調整すること!
+        image: densukest/hostbot:v1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 80
