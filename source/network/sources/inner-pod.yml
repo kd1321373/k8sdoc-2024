@@ -1,0 +1,21 @@
+# ポッド内で2つのコンテナが動く例、両方ともbusyboxベースのコンテナを動かして確認してみます
+apiVersion: v1
+kind: Pod
+metadata:
+  name: two-containers
+spec:
+  containers:
+  - name: 1st
+    image: busybox
+    command: ['sh', '-c', 'echo Hello, Kubernetes! && sleep 3600']
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+  - name: second-container
+    image: busybox
+    command: ['sh', '-c', 'echo Hello, Kubernetes! && sleep 3600']
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
