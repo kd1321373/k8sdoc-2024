@@ -18,3 +18,9 @@ h1,h2,h3,h4,h5,h6 {
 colgroup {
     display: none;
 }
+
+p {
+    text-indent: 1em; /* 行頭を全角1文字分下げる */
+    margin-top: 0;    /* 段落の上部の余白をなくす */
+    margin-bottom: 0.2em; /* 段落の下部の余白を設定 */
+}
