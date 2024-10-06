@@ -17,6 +17,7 @@ Kubernetes体験
    tour/index
    ui/index
    workloads/index
+   storage/index
 
 
 本ドキュメントの公開方法
