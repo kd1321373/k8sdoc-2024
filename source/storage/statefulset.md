@@ -87,7 +87,20 @@ StatefulSetを使ってMySQLを作成してみましょう。
 ```{literalinclude} src/ss-mysql.yml
 :language: yaml
 :name: ss-mysql.yml
+:linenos:
+:emphasize-lines: 1,2,8,9,12-34,35-42
 ```
+
+簡単に補足しておきます。
+
+- 1,2行目: StatefulSetの定義、APIバージョンとリソース種別
+- 8行目: 複数のPodを管理するために、ラベルセレクターを指定
+  - `app=mysql`のものを対象とする
+- 9行目: `ServiceName`は、内部的な通信で使うサービス(Service)の名前です(現状ではあまり考えなくてよい)
+- 12行目〜34行目: Pod部分のテンプレート(ここはDeploymentと同じ、ボリューム名もここで指定します
+- 35行目〜42行目: PVCの定義
+  - ボリューム名として、コンテナテンプレート内で指定したもの(`db`)を指定します
+  - 容量の設定や、必要なら利用したいストレージクラスの選択を行います(デフォルト使用)
 
 これを適用すると、`statefulset.apps/mysql`リソースが作成されます。
 そして、定義されたPVCが作成され、そのPVCによってPodが起動されます。
