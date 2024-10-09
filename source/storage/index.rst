@@ -9,4 +9,4 @@ K8sとストレージ
    create-pvc.md
    #dd-host-storage.md
    local-resource.md
-
+   statefulset.md
