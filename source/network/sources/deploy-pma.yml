@@ -1,0 +1,28 @@
+# phpMyAdminをデプロイする
+# * Arbitraryモードでデプロイする
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pma
+spec:
+  selector:
+    matchLabels:
+      app: pma
+  template:
+    metadata:
+      labels:
+        app: pma
+    spec:
+      containers:
+      - name: pma
+        image: phpmyadmin/phpmyadmin
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "250m"
+        ports:
+        - containerPort: 80
+        env:
+        - name: PMA_ARBITRARY
+          value: "1"

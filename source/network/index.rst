@@ -12,10 +12,13 @@ Docker単体では、コンテナは同一のDocker Engineにて動いている�
 - 同じノード上の別のポッド(内のコンテナ)と通信する場合
 - 別のノード上のポッド(内のコンテナ)と通信する場合
 
-まずはわかりやすい例として、同じポッド上に複数のコンテナが存在する場合を考えてみましょう。
+わかりやすい例として、MySQLサーバーのPodとクライアントになるPodを用意しての接続を考えてみます。
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: 目次:
 
-    inner-pod.md
+    #inner-pod.md
+    about.md
+    cluster-ip.md
+    #nodeport.md

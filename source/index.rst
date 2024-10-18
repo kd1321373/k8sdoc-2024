@@ -18,6 +18,7 @@ Kubernetes体験
    ui/index
    workloads/index
    storage/index
+   network/index
 
 
 本ドキュメントの公開方法
