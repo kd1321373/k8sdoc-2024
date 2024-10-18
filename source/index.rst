@@ -13,6 +13,7 @@ Kubernetes体験
    :maxdepth: 1
 
    setup/index
+   reset/index.md
    whatis/index
    tour/index
    ui/index
