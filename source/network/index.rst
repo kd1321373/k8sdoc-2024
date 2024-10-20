@@ -21,4 +21,4 @@ Docker単体では、コンテナは同一のDocker Engineにて動いている�
     #inner-pod.md
     about.md
     cluster-ip.md
-    #nodeport.md
+    nodeport.md
