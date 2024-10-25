@@ -20,6 +20,7 @@ Kubernetes体験
    workloads/index
    storage/index
    network/index
+   probe/index
 
 
 本ドキュメントの公開方法
