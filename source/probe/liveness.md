@@ -56,12 +56,14 @@ Server Error 6                  # 失敗(6%を引いたのは悪くない)
 
 ```{literalinclude} src/failweb/deploy-failweb.yml
 :language: yaml
+:name: deploy-failweb.yml
 ```
 
 そして、ノードポートを使ってアクセスできるようにサービスを用意します。
 
 ```{literalinclude} src/failweb/service-failweb.yml
 :language: yaml
+:name: service-failweb.yml
 ```
 
 両マニフェストを適用し、アクセスポートを確認してみましょう。
@@ -76,7 +78,7 @@ failweb   NodePort   192.168.194.199   <none>        80:31062/TCP   58s
 今回は31062に割り当てられたようなので、実際にアクセスして確認してみましょう。
 
 ```bash
-$ curl localhost:31062  # まずは通常
+$ curl localhost:31062  # まずは通常(/)のアクセス
 Hello, World!
 ```
 
