@@ -10,7 +10,7 @@
 - スタートアッププローブ(後日追加)
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: 目次:
 
    readiness.md
