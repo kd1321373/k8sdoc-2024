@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-deployver
+spec:
+  selector:
+    matchLabels:
+      app: mysql-deployver
+  template:
+    metadata:
+      labels:
+        app: mysql-deployver
+    spec:
+      containers:
+      - name: mysql-deployver
+        image: mysql:8
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        env:
+        - name: MYSQL_RANDOM_ROOT_PASSWORD
+          value: "yes"
+        - name: MYSQL_DATABASE
+          value: "mydb"
+        - name: MYSQL_USER
+          value: "myuser"
+        - name: MYSQL_PASSWORD
+          value: "mypassword"
+        volumeMounts:
+        - name: db-data
+          mountPath: /var/lib/mysql
+        readinessProbe:
+          # 起動時は15秒待つ
+          initialDelaySeconds: 15
+          # 10秒毎にチェック
+          periodSeconds: 10
+          exec:
+            command:
+            - mysqladmin
+            - -h
+            - 127.0.0.1
+            - -u
+            - myuser
+            - --password=mypassword
+            - ping
+      volumes:
+      - name: db-data
+        persistentVolumeClaim:
+          claimName: mysql-pvc

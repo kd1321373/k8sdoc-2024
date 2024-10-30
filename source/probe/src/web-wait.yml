@@ -1,0 +1,24 @@
+# Webサーバーを起動するが、データが入るまで待機するサンプル
+apiVersion: v1
+kind: Pod
+metadata:
+  name: httpd-wait
+  labels:
+    name: httpd-wait
+spec:
+  containers:
+  - name: httpd-wait
+    image: httpd:2.4
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 80
+    startupProbe:
+      httpGet:
+        path: /ready
+        port: 80
+      failureThreshold: 3
+      periodSeconds: 5
+

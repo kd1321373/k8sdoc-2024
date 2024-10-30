@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysql-with-controller
+  labels:
+    name: mysql-with-controller
+spec:
+  containers:
+  - name: mysql
+    image: mysql:8
+    resources:
+      limits:
+        memory: "512Mi"
+        cpu: "500m"
+    env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: password
+    - name: MYSQL_DATABASE
+      value: mydb
+    - name: MYSQL_USER
+      value: myuser
+    - name: MYSQL_PASSWORD
+      value: mypassword
+    readinessProbe:
+      exec:
+        command: ["mysqladmin", "ping", "-h", "127.0.0.1", "-u", "myuser", "--password=mypassword"]
+      initialDelaySeconds: 15
+      periodSeconds: 5
+
+  - name: controller
+    image: phpmyadmin
+    resources:
+      limits:
+        memory: "512Mi"
+        cpu: "500m"
+    env:
+    - name: PMA_HOST
+      value: "127.0.0.1"
+
+    ports:
+    - containerPort: 80

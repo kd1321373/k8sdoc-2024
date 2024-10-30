@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: failweb
+spec:
+  selector:
+    matchLabels:
+      app: failweb
+  template:
+    metadata:
+      labels:
+        app: failweb
+    spec:
+      containers:
+      - name: failweb
+        image: densukest/failweb:v1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80

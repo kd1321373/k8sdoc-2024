@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysql-nowait
+  labels:
+    name: mysql-nowait
+spec:
+  containers:
+  - name: mysql-nowait
+    image: mysql:8
+    resources:
+      limits:
+        memory: "512Mi"
+        cpu: "500m"
+    env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: password
+    - name: MYSQL_DATABASE
+      value: test
+    - name: MYSQL_USER
+      value: user
+    - name: MYSQL_PASSWORD
+      value: password
+    startupProbe:
+      exec:
+        command: ["mysqladmin", "ping", "-u", "root", "--password=password", "-h", "127.0.0.1"]
+      initialDelaySeconds: 3
+      periodSeconds: 3
+      timeoutSeconds: 1
+      failureThreshold: 2
+
+

@@ -1,0 +1,40 @@
+# Webサーバーに起動時にコンテンツを流し込むデプロイメント例
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-loader
+spec:
+  selector:
+    matchLabels:
+      app: web-loader
+  template:
+    metadata:
+      labels:
+        app: web-loader
+    spec:
+      containers:
+      - name: web-loader
+        image: nginx:1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: web-content
+          mountPath: /usr/share/nginx/html
+      initContainers:
+      - name: loader
+        image: busybox
+        command:
+          - sh
+          - -c
+          - 'echo "Hello, World!" > /web-content/index.html; sleep 10'
+        volumeMounts:
+        - name: web-content
+          mountPath: /web-content
+      volumes:
+      - name: web-content
+        # Podの動くノード上で適当に空ディレクトリを用意させる
+        emptyDir: {}

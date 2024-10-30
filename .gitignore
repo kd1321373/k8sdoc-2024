@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # python generated files
 __pycache__/
 *.py[oc]
@@ -8,3 +9,16 @@ wheels/
 
 # venv
 .venv
+=======
+# python generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# venv
+.venv
+node_modules
+>>>>>>> 784c4b3df83930ec830cd0a426536208edd89c6d
