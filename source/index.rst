@@ -21,6 +21,7 @@ Kubernetes体験
    storage/index
    network/index
    probe/index
+   sidecar/index
 
 
 本ドキュメントの公開方法
